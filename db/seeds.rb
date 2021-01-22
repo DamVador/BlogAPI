@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Article.destroy_all
+
+i=1
+4.times do 
+    Article.create!(
+        title: "article #{i}",
+        content: "content #{i}",
+        signature: "DamVador"
+    )
+    i += 1
+end
+
+puts "Articles created"

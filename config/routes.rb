@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :articles
+  namespace :api, defaults: { format: :json } do
+    resources :articles
+  end
+  
   devise_for :admins,
   defaults: { format: :json },
   path: '',
